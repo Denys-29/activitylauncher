@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ActivityLauncherRegistration</string>
+    <string name="password">Enter password</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="done">Done</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="sing_in">Sing In</string>
+    <string name="enter_email">Enter email</string>
+    <string name="close">Close</string>
+    <string name="register">register</string>
+    <string name="login_caps">LOGIN</string>
+    <string name="item">Item</string>
+    <string name="api_key">"2d69bf37526472a27328b8717eb158ea"</string>
+</resources>

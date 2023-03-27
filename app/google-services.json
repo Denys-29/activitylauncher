@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "92241938651",
+    "project_id": "activitylauncher-c1e02",
+    "storage_bucket": "activitylauncher-c1e02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92241938651:android:b8cf7a599aa4c93829e4fe",
+        "android_client_info": {
+          "package_name": "com.example.activitylauncher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92241938651-a4h525fa2qf9ku8tkkaiodhh5qt3mi8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjhRZ34jF23zlyxbmbN9GHCeVWUt3NRpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92241938651-a4h525fa2qf9ku8tkkaiodhh5qt3mi8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
