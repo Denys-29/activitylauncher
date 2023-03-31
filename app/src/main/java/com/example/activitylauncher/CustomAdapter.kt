@@ -2,12 +2,21 @@ package com.example.activitylauncher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.activitylauncher.Movies.Result
 import com.squareup.picasso.Picasso
 
-class CustomAdapter(private val mList: List<Result>?) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class CustomAdapter(private val mList: List<Result>?,
+            val mItemClickListener:ItemClickListener) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+
+    // create interface clickListener
+    interface ItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
@@ -21,9 +30,10 @@ class CustomAdapter(private val mList: List<Result>?) : RecyclerView.Adapter<Cus
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        Picasso.get().load("https://image.tmdb.org/t/p/w500" + mList?.get(position)?.poster_path).into(holder.imageView)
+        Picasso.get().load("https://image.tmdb.org/t/p/w500" + mList?.get(position)?.poster_path)
+            .into(holder.imageView)
 
-        val  ItemsViewModel = mList?.get(position)
+        mList?.get(position)
 
         // sets the image to the imageview from our itemHolder class
         // holder.imageView.setImageResource(ItemsViewModel.)
@@ -38,7 +48,12 @@ class CustomAdapter(private val mList: List<Result>?) : RecyclerView.Adapter<Cus
 
     }
     // Holds the views for adding it to image and text
-    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
+     inner class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageview)
+        init {
+            ItemView.setOnClickListener{
+               mList?.get(position)?.id?.let { it -> mItemClickListener.onItemClick(it) }
+            }
+        }
     }
 }

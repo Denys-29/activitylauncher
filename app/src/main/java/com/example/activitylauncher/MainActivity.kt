@@ -1,5 +1,4 @@
 package com.example.activitylauncher
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,11 +13,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var database: DatabaseReference // создали обьект для записи в БД
-
 
     private val signInLauncher = registerForActivityResult( //создания обьект авторизации экрана
         FirebaseAuthUIActivityResultContract()
@@ -45,7 +42,6 @@ class MainActivity : AppCompatActivity() {
             .setAvailableProviders(providers)
             .build() // создание Intent для списка регистрации
         signInLauncher.launch(signInIntent) // запустили екран Firebase.auth
-
     }
 
     private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
@@ -66,9 +62,8 @@ class MainActivity : AppCompatActivity() {
                }
 
             } else {
-                Toast.makeText(
-                    this,"Something wrong with registration", Toast.LENGTH_SHORT
-                ).show()
+
+                Toast.makeText(this,"Something wrong with registration", Toast.LENGTH_SHORT).show()
             // Sign in failed. If response is null the user canceled the
             // sign-in flow using the back button. Otherwise check
             // response.getError().getErrorCode() and handle the error.
