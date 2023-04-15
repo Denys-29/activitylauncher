@@ -20,8 +20,8 @@ class MoviesDetailsActivity : AppCompatActivity() {
     private lateinit var releaseDate : TextView
     private lateinit var score : TextView
     private lateinit var owerview : TextView
-
     private lateinit var banner : ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +33,7 @@ class MoviesDetailsActivity : AppCompatActivity() {
         score = binding.movieDetailsScore
         owerview = binding.movieDetailsBodyOverview
         banner = binding.movieDetailsImageBanner
+
 
         val id = intent.getIntExtra("id", 0)
         Log.d("MyLog", "id $id")

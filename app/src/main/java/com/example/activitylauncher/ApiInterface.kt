@@ -1,4 +1,5 @@
 package com.example.activitylauncher
+
 import com.example.activitylauncher.Movies.Movies
 import com.example.activitylauncher.MoviesDetails.MoviesDetails
 import retrofit2.Call
@@ -15,6 +16,7 @@ interface ApiInterface {
 
     @GET( "3/movie/{movie_id}")
     fun getMovieDetails(@Path("movie_id") movieId: Int, @Query("api_key") sort : String) : Call<MoviesDetails>
+
     companion object {
 
         var BASE_URL = "https://api.themoviedb.org/"
